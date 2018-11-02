@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Prediction API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>API for getting housing price predictions using the Boston Housing
+        Dataset</h1>
+    <p>You can manually enter RM and LSTAT below or programmatically use
+       post requests through the "/predictapi" path.</p>
+  </body>
+  <form action="/predict" method="post" enctype="multipart/form-data">
+     <label for="RM">Room Count</label>
+     <input type="number" name="RM" id="RM" min="1" max="20"><br>
+     <label for="LSTAT">% of Neighborhood Below Poverty Level</label>
+     <input type="number" name="LSTAT" id="LSTAT" min="0" max="100"><br>
+     <input type="submit" value="Predict"> {% if label %} {{ label }} {% endif %}
+  </form>
+</html>
